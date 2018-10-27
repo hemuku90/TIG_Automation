@@ -59,6 +59,15 @@
   notify: restart influxdb
   tags: configuration
 
+- name: Install client for InfluxDB
+  shell: pip install influxdb
+
+- name: Create database
+  influxdb_database:
+      hostname: "localhost"
+      database_name: "{{ item }}"
+  with_items: "{{ influx_databases }}"
+
 - name: ensure influxdb is running and enabled to start on boot
   service:
     name: influxdb
