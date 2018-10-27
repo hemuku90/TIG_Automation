@@ -571,3 +571,6 @@ influxdb_rpc_port: 8088
 influxdb_udp_port: 8089
 influxdb_user: influxdb
 influxdb_version: 1.6.3
+influx_databases:
+- test1
+- test2
