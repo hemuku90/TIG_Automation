@@ -1,8 +1,12 @@
 Autohor: Hemant Kumar
 Automation for Deployment of Telegraf, Influxdb and Grafana
+
 Telegraf Role Definition:
 
 All the varibales for telegraf can be defined in /telegraf/defaults/main.yaml:
+
+Variables List:
+
 telegraf_install_version: stable
 
 # The user and group telegraf should run under (should be set to telegraf unless needed otherwise)
@@ -57,7 +61,7 @@ telegraf_plugins_base:
       mountpoints:
         - "/"
 
-----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 Grafana Role Definition:
 
 Grafana varaibles can be defined in /grafana/defaults/main.yaml.
@@ -357,4 +361,6 @@ Similarly for configuring different Telegraf agents on different machines for se
    database: "test2"
    
    
+
+
 
