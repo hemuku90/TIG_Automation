@@ -1,6 +1,6 @@
 ---
 - name: Install Telegraf
-  hosts: host
+  hosts: localhost
 #  connection: local
 #  sudo: yes
   become: yes
@@ -8,3 +8,14 @@
     - telegraf
   vars:
     database: "test2"
+
+- name: influxdb installation
+  hosts: localhost
+  roles: 
+    - influxdb
+
+- name: Install Grafana
+  hosts: localhost
+  roles: 
+    - grafana 
+   

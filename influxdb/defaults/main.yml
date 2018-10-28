@@ -574,3 +574,4 @@ influxdb_version: 1.6.3
 influx_databases:
 - test1
 - test2
+- test3
