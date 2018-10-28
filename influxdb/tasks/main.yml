@@ -20,8 +20,8 @@
 
 - name: ensure apt dependencies are installed
   apt:
-    name="{{ influxdb_apt_dependencies }}"
-    state=present
+    name= "{{ influxdb_apt_dependencies }}"
+    state= present
   become: yes
   when: ansible_distribution | lower == 'debian' and influxdb_apt_dependencies is defined
 
@@ -47,26 +47,34 @@
     state=present
   become: yes
   tags: installation
-
-- name: ensure integrity of influxdb configuration
-  template:
-    src=etc/influxdb/influxdb.conf.j2
-    dest=/etc/influxdb/influxdb.conf
-    owner="{{ influxdb_user }}"
-    group="{{ influxdb_group }}"
-    mode=0644
+  
+#- name: ensure integrity of influxdb configuration
+#  template:
+#    src=etc/influxdb/influxdb.conf.j2
+#    dest=/etc/influxdb/influxdb.conf
+#    owner= "{{ influxdb_user }}"
+#    group="{{ influxdb_group }}"
+#    mode=0644
+#  become: yes
+#  notify: restart influxdb
+# 
+- name: Install Pip
+  apt: 
+    name: python-pip
+    state: present
   become: yes
-  notify: restart influxdb
-  tags: configuration
+  retries: 5
+  delay: 5
 
 - name: Install client for InfluxDB
-  shell: pip install influxdb
-
-- name: Create database
-  influxdb_database:
-      hostname: "localhost"
-      database_name: "{{ item }}"
-  with_items: "{{ influx_databases }}"
+  become: yes
+  pip: 
+   name: influxdb
+#  shell: pip install influxdb
+#  register: influxdb_install
+#  untill: influxdb_install is succeeded
+  retries: 5
+  delay: 2
 
 - name: ensure influxdb is running and enabled to start on boot
   service:
@@ -75,3 +83,9 @@
     enabled: yes
   become: yes
   tags: service
+
+- name: Create database
+  influxdb_database:
+      hostname: "localhost"
+      database_name: "{{ item }}"
+  with_items: "{{ influx_databases }}"

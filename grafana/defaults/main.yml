@@ -173,8 +173,8 @@ grafana_plugins: []
 #
 # Dashboards from https://grafana.com/dashboards
 grafana_dashboards:  
-- dashboard_id: '5955'
-  revision_id: '1'
+- dashboard_id: '928'
+  revision_id: '3'
   datasource: 'Influxdb'
 #  - dashboard_id: '1860'
 #    revision_id: '4'

@@ -28,9 +28,10 @@ telegraf_hostname:
 telegraf_omit_hostname: "false"
 telegraf_install_url:
 
+database: "test1"
 telegraf_influxdb_urls:
   - http://localhost:8086
-telegraf_influxdb_database: telegraf
+telegraf_influxdb_database: "{{ database }}"
 telegraf_influxdb_precision: s
 telegraf_influxdb_retention_policy: autogen
 telegraf_influxdb_write_consistency: any
