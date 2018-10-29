@@ -1,0 +1,24 @@
+#Override Telegraf variables
+database: "telegraf"
+plugin:
+global_tag:
+
+#Override Grafana variables
+grafana_logs_dir: "/var/log/grafana"
+grafana_data_dir: "/var/lib/grafana"
+grafana_address: "0.0.0.0"
+grafana_port: 3000
+
+# Override InfluxDB varaibles
+influxdb_conf_file: /etc/influxdb/influxdb.conf
+influxdb_group: influxdb
+influxdb_http_port: 8086
+influxdb_ifql_port: 8082
+influxdb_rpc_port: 8088
+influxdb_udp_port: 8089
+influxdb_user: influxdb
+influxdb_version: 1.6.3
+influx_databases:
+- test1
+- test2
+

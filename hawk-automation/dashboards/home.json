@@ -1,0 +1,868 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 32,
+  "links": [],
+  "panels": [
+    {
+      "content": "<div class=\"text-center dashboard-header\">\n  </br>\n  <img src=\"https://s3-ap-southeast-2.amazonaws.com/sky-ott-prod-utility/logo/sky_active_dark.svg\">\n  </br>\n  <span>Tabcorp HAWK Dashboard - Test Environment</span>\n</div>\n",
+      "editable": true,
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "links": [],
+      "mode": "html",
+      "style": {},
+      "title": "",
+      "transparent": false,
+      "type": "text"
+    },
+    {
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 8,
+      "isRootDashboard": true,
+      "links": [],
+      "title": "",
+      "transparent": true,
+      "type": "digiapulssi-breadcrumb-panel"
+    },
+    {
+      "description": "Dashboards for Full Application Monitoring.",
+      "folderId": 14,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 7
+      },
+      "headings": false,
+      "id": 5,
+      "limit": 100,
+      "links": [],
+      "query": "",
+      "recent": false,
+      "search": true,
+      "starred": false,
+      "tags": [],
+      "title": "Application Dashboards",
+      "transparent": false,
+      "type": "dashlist"
+    },
+    {
+      "description": "Dashboards for whole Stack Monitoring.",
+      "folderId": 13,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 6,
+        "y": 7
+      },
+      "headings": true,
+      "id": 4,
+      "limit": 10,
+      "links": [],
+      "query": "",
+      "recent": false,
+      "search": true,
+      "starred": false,
+      "tags": [],
+      "title": "Tech Stack Dashboards",
+      "transparent": false,
+      "type": "dashlist"
+    },
+    {
+      "description": "Dashboards for URL Monitoring and General Purpose.",
+      "folderId": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 12,
+        "y": 7
+      },
+      "headings": true,
+      "id": 3,
+      "limit": 10,
+      "links": [],
+      "query": "",
+      "recent": false,
+      "search": true,
+      "starred": false,
+      "tags": [],
+      "title": "General Dashboards",
+      "transparent": false,
+      "type": "dashlist"
+    },
+    {
+      "description": "Dashboards for all hosts/VM/Docker monitoring.",
+      "folderId": 12,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 7
+      },
+      "headings": true,
+      "id": 6,
+      "limit": 10,
+      "links": [],
+      "query": "",
+      "recent": false,
+      "search": true,
+      "starred": false,
+      "tags": [],
+      "title": "VM/Hosts/Docker Dashboards",
+      "transparent": false,
+      "type": "dashlist"
+    },
+    {
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "composites": [],
+      "content": "graph LR\nA[fa:fa-user-circle https://tabcorp-test.tothenew.net/cms-api] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nB[fa:fa-user-circle https://tabcorp-test.tothenew.net/cms-ui] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nC[fa:fa-user-circle https://tabcorp-test.tothenew.net/content-detail-service] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nD[fa:fa-user-circle https://tabcorp-test.tothenew.net/customer-service] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nE[fa:fa-user-circle https://tabcorp-test.tothenew.net/homescreen-service] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nF[fa:fa-user-circle https://tabcorp-test.tothenew.net/playlist-service] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nG[fa:fa-user-circle https://tabcorp-test.tothenew.net/race-service] -. DNS .->I(fa:fa-server Public Application Load Balancer)\nI(fa:fa-server Public Application Load Balancer) -.-> J{KONG-API-Gateway}\nJ{KONG-API-Gateway} -.cms-api.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.cms-ui.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.content-detail-service.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.customer-service.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.homescreen-service.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.playlist-service.-> K((Private Application Load Balancer))\nJ{KONG-API-Gateway} -.race-service.-> K((Private Application Load Balancer))\nK((Private Application Load Balancer)) -.cms-api.-> L(fa:fa-server cms-api Docker Container)\nK((Private Application Load Balancer)) -.cms-ui.-> M(fa:fa-server customer-service Docker Container)\nK((Private Application Load Balancer)) -.content-detail-service.-> N(fa:fa-server race-service Docker Container)\nK((Private Application Load Balancer)) -.customer-service.-> O(fa:fa-server content-detail Docker Container)\nK((Private Application Load Balancer)) -.homescreen-service.-> P(fa:fa-server customer-service Docker Container)\nK((Private Application Load Balancer)) -.playlist-service.-> Q(fa:fa-server race-service Docker Container)\nK((Private Application Load Balancer)) -.race-service.-> R(fa:fa-server content-detail Docker Container)\nL-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nM-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nN-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nO-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nP-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nQ-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nR-.MySQL Aurora.->S(fa:fa-database MySQL Aurora DB)\nL-.RabbitMQ.->T(fa:fa-server RabbitMQ Cluster)\nM-.RabbitMQ.->T(fa:fa-server RabbitMQ Cluster)\nN-.MongoDB.-> Z(fa:fa-database MongoDB Cluster)\n",
+      "datasource": "-- Mixed --",
+      "decimals": 2,
+      "format": "s",
+      "graphId": "diagram_14",
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 14,
+      "init": {
+        "arrowMarkerAbsolute": true,
+        "cloneCssStyles": false,
+        "flowchart": {
+          "htmlLabels": true,
+          "useMaxWidth": true
+        },
+        "gantt": {
+          "barGap": 4,
+          "barHeight": 20,
+          "fontFamily": "\"Open-Sans\", \"sans-serif\"",
+          "fontSize": 11,
+          "gridLineStartPadding": 35,
+          "leftPadding": 75,
+          "numberSectionStyles": 3,
+          "titleTopMargin": 25,
+          "topPadding": 50
+        },
+        "logLevel": 3,
+        "sequenceDiagram": {
+          "actorMargin": 50,
+          "bottomMarginAdj": 1,
+          "boxMargin": 10,
+          "boxTextMargin": 5,
+          "diagramMarginX": 50,
+          "diagramMarginY": 10,
+          "height": 65,
+          "messageMargin": 35,
+          "mirrorActors": true,
+          "noteMargin": 10,
+          "useMaxWidth": true,
+          "width": 150
+        },
+        "startOnLoad": false
+      },
+      "legend": {
+        "avg": false,
+        "current": true,
+        "gradient": {
+          "enabled": true,
+          "show": true
+        },
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false
+      },
+      "links": [],
+      "mappingType": 1,
+      "maxDataPoints": 100,
+      "maxWidth": false,
+      "mermaidServiceUrl": "",
+      "metricCharacterReplacements": [],
+      "mode": "content",
+      "nullPointMode": "connected",
+      "seriesOverrides": [],
+      "targets": [
+        {
+          "alias": "A",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "B",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-ui"
+            }
+          ]
+        },
+        {
+          "alias": "C",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "content-detail-service"
+            }
+          ]
+        },
+        {
+          "alias": "D",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "customer-service"
+            }
+          ]
+        },
+        {
+          "alias": "E",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "homescreen-service"
+            }
+          ]
+        },
+        {
+          "alias": "F",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "playlist-service"
+            }
+          ]
+        },
+        {
+          "alias": "G",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "race-service"
+            }
+          ]
+        },
+        {
+          "alias": "J",
+          "datasource": "ecs_metric1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "kong-admin"
+            }
+          ]
+        },
+        {
+          "alias": "L",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "M",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "N",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "O",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "P",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "Q",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "P",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "R",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "Q",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "cms-api"
+            }
+          ]
+        },
+        {
+          "alias": "T",
+          "datasource": "ecs_metric1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "R",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "rabbit1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "S",
+          "datasource": "ecs_metric1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "S",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "mysql-db-cluster.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "Z",
+          "datasource": "ecs_metric1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "T",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "mongodb1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "I",
+          "datasource": "test_aws",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-alb/69898112f279ff12"
+          },
+          "highResolution": false,
+          "metricName": "TargetResponseTime",
+          "namespace": "AWS/ApplicationELB",
+          "period": "",
+          "refId": "H",
+          "region": "ap-southeast-2",
+          "statistics": [
+            "Average"
+          ]
+        },
+        {
+          "alias": "K",
+          "datasource": "test_aws",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd"
+          },
+          "highResolution": false,
+          "metricName": "TargetResponseTime",
+          "namespace": "AWS/ApplicationELB",
+          "period": "",
+          "refId": "J",
+          "region": "ap-southeast-2",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": "0,1",
+      "title": "API Flow",
+      "transparent": false,
+      "type": "jdbranham-diagram-panel",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "valueOptions": [
+        "avg",
+        "min",
+        "max",
+        "total",
+        "current"
+      ]
+    },
+    {
+      "dashboardFilter": "",
+      "dashboardTags": [],
+      "folderId": null,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 38
+      },
+      "id": 10,
+      "limit": 10,
+      "links": [],
+      "nameFilter": "",
+      "onlyAlertsOnDashboard": false,
+      "show": "current",
+      "sortOrder": 1,
+      "stateFilter": [],
+      "title": "Alerts",
+      "type": "alertlist"
+    }
+  ],
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "hidden": false,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "timezone": "browser",
+  "title": "Home Dashboard",
+  "uid": "H_nJMnAmz",
+  "version": 36
+}
