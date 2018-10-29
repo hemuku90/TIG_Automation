@@ -1,0 +1,4793 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Visualize metrics of applications",
+  "editable": true,
+  "gnetId": 551,
+  "graphTooltip": 0,
+  "id": 42,
+  "iteration": 1540739753113,
+  "links": [],
+  "panels": [
+    {
+      "gridPos": {
+        "h": 2,
+        "w": 9,
+        "x": 0,
+        "y": 0
+      },
+      "id": 30,
+      "isRootDashboard": false,
+      "links": [],
+      "title": "",
+      "transparent": true,
+      "type": "digiapulssi-breadcrumb-panel"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "es_test_customer_service",
+      "description": "Click here to go to real time log dashboard.",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 9,
+        "y": 0
+      },
+      "id": 48,
+      "interval": null,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Realtime Logtrail",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/logtrail#/?q=exception&h=test-customer-service&t=Now&i=test-*&_g=()"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "exception",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": "",
+      "title": "Application Exception Count",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "es_test_customer_service",
+      "description": "Click here to go to real time log dashboard.",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 13,
+        "y": 0
+      },
+      "id": 50,
+      "interval": null,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Realtime Logtrail",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/logtrail#/?q=error&h=test-customer-service&t=Now&i=test-*&_g=()"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "error",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": "",
+      "title": "Application Error Count",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "content": "<div style=\"cursor: pointer;\" onclick=\"window.open('https://rpm.newrelic.com/accounts/2115264/applications/198595151','_blank')\">\n   <h3><center>NewRelic Detailed Monitoring</center></h3>\n</div>",
+      "description": "Click here to go to the application Newrelic dashboard.",
+      "gridPos": {
+        "h": 1,
+        "w": 7,
+        "x": 17,
+        "y": 0
+      },
+      "id": 36,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "NewRelic",
+          "type": "absolute",
+          "url": "https://rpm.newrelic.com/accounts/2115264/applications/198595151"
+        }
+      ],
+      "mode": "html",
+      "title": "NewRelic Detailed Monitoring",
+      "transparent": false,
+      "type": "text"
+    },
+    {
+      "content": "<div style=\"cursor: pointer;\" onclick=\"window.open('http://tabcorp-test-kibana.tothenew.net/app/logtrail#/?q=*&h=test-customer-service&t=Now&i=test-*&_g=()','_blank')\">\n   <h3><center>Real Time Logs</center></h3>\n</div>",
+      "description": "Click here to go to the Real Time log trail.",
+      "gridPos": {
+        "h": 1,
+        "w": 7,
+        "x": 17,
+        "y": 1
+      },
+      "id": 63,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Log Trail",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/logtrail#/?q=*&h=test-customer-service&t=Now&i=test-*&_g=()"
+        }
+      ],
+      "mode": "html",
+      "title": "Real Time Logs",
+      "transparent": false,
+      "type": "text"
+    },
+    {
+      "content": "<div style=\"cursor: pointer;\" onclick=\"window.open('http://tabcorp-test-kibana.tothenew.net/app/kibana#/dashboard/41b5d920-7821-11e7-8c47-65b845b5cfb3?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-30m,mode:quick,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),panels:!((embeddableConfig:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),gridData:(h:10,i:'1',w:12,x:0,y:3),id:a2e199b0-7820-11e7-8c47-65b845b5cfb3,panelIndex:'1',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'2',w:6,x:0,y:0),id:'09bcf890-7822-11e7-8c47-65b845b5cfb3',panelIndex:'2',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'3',w:6,x:6,y:0),id:'55606a60-7823-11e7-8c47-65b845b5cfb3',panelIndex:'3',type:visualization,version:'6.2.2')),query:(language:lucene,query:''),timeRestore:!f,title:'%5BAPM%5D%20Transactions',viewMode:view)','_blank')\">\n   <h3><center>Elastic APM</center></h3>\n</div>",
+      "description": "Click here to go to the Elastic APM Monitoring",
+      "gridPos": {
+        "h": 1,
+        "w": 7,
+        "x": 17,
+        "y": 2
+      },
+      "id": 64,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Elastic APM",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/kibana#/dashboard/41b5d920-7821-11e7-8c47-65b845b5cfb3?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-30m,mode:quick,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),panels:!((embeddableConfig:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),gridData:(h:10,i:'1',w:12,x:0,y:3),id:a2e199b0-7820-11e7-8c47-65b845b5cfb3,panelIndex:'1',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'2',w:6,x:0,y:0),id:'09bcf890-7822-11e7-8c47-65b845b5cfb3',panelIndex:'2',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'3',w:6,x:6,y:0),id:'55606a60-7823-11e7-8c47-65b845b5cfb3',panelIndex:'3',type:visualization,version:'6.2.2')),query:(language:lucene,query:''),timeRestore:!f,title:'%5BAPM%5D%20Transactions',viewMode:view)"
+        }
+      ],
+      "mode": "html",
+      "title": "Elastic APM",
+      "transparent": false,
+      "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 9,
+      "panels": [],
+      "title": "Frontend Layer",
+      "type": "row"
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                100
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "Customer Service Transaction Time [APM] alert",
+        "noDataState": "ok",
+        "notifications": []
+      },
+      "aliasColors": {
+        "Time": "#629e51"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "elastic-apm-server-transaction",
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 7,
+        "x": 0,
+        "y": 4
+      },
+      "id": 66,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "title": "Detailed APM Monitoring",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/kibana#/dashboard/41b5d920-7821-11e7-8c47-65b845b5cfb3?_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),panels:!((embeddableConfig:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),gridData:(h:10,i:'1',w:12,x:0,y:3),id:a2e199b0-7820-11e7-8c47-65b845b5cfb3,panelIndex:'1',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'2',w:6,x:0,y:0),id:'09bcf890-7822-11e7-8c47-65b845b5cfb3',panelIndex:'2',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'3',w:6,x:6,y:0),id:'55606a60-7823-11e7-8c47-65b845b5cfb3',panelIndex:'3',type:visualization,version:'6.2.2')),query:(language:lucene,query:'context.service.name:%22test-customer-service%22'),timeRestore:!f,title:'%5BAPM%5D%20Transactions',viewMode:view)&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-12h,mode:quick,to:now))"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Time",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "1m",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "transaction.duration.us",
+              "id": "1",
+              "inlineScript": "_value/1000",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value/1000"
+                }
+              },
+              "type": "avg"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 100
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Transaction Time [APM]",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "Transaction Time [APM]",
+          "logBase": 1,
+          "max": "010000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                2000
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "Customer Service Transaction Per Minute [APM] alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {
+        "Count": "#eab839"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "elastic-apm-server-transaction",
+      "decimals": 0,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 7,
+        "x": 7,
+        "y": 4
+      },
+      "id": 67,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "title": "Detailed APM Monitoring",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/kibana#/dashboard/41b5d920-7821-11e7-8c47-65b845b5cfb3?_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),panels:!((embeddableConfig:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),gridData:(h:10,i:'1',w:12,x:0,y:3),id:a2e199b0-7820-11e7-8c47-65b845b5cfb3,panelIndex:'1',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'2',w:6,x:0,y:0),id:'09bcf890-7822-11e7-8c47-65b845b5cfb3',panelIndex:'2',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'3',w:6,x:6,y:0),id:'55606a60-7823-11e7-8c47-65b845b5cfb3',panelIndex:'3',type:visualization,version:'6.2.2')),query:(language:lucene,query:'context.service.name:%22test-customer-service%22'),timeRestore:!f,title:'%5BAPM%5D%20Transactions',viewMode:view)&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-12h,mode:quick,to:now))"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "1m",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "transaction.duration.us",
+              "id": "1",
+              "inlineScript": "_value/1000",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 2000
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Transaction Per Minute [APM]",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "none",
+          "label": "Count",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "columns": [],
+      "datasource": "elastic-apm-server-transaction",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 14,
+        "y": 4
+      },
+      "id": 69,
+      "links": [
+        {
+          "title": "Detailed APM Monitoring",
+          "type": "absolute",
+          "url": "http://tabcorp-test-kibana.tothenew.net/app/kibana#/dashboard/41b5d920-7821-11e7-8c47-65b845b5cfb3?_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),panels:!((embeddableConfig:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),gridData:(h:10,i:'1',w:12,x:0,y:3),id:a2e199b0-7820-11e7-8c47-65b845b5cfb3,panelIndex:'1',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'2',w:6,x:0,y:0),id:'09bcf890-7822-11e7-8c47-65b845b5cfb3',panelIndex:'2',type:visualization,version:'6.2.2'),(gridData:(h:3,i:'3',w:6,x:6,y:0),id:'55606a60-7823-11e7-8c47-65b845b5cfb3',panelIndex:'3',type:visualization,version:'6.2.2')),query:(language:lucene,query:'context.service.name:%22test-customer-service%22'),timeRestore:!f,title:'%5BAPM%5D%20Transactions',viewMode:view)&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-12h,mode:quick,to:now))"
+        }
+      ],
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 1,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Transaction",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "transaction.name.keyword",
+          "type": "string"
+        },
+        {
+          "alias": "Average Response Time (ms)",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [
+            ""
+          ],
+          "type": "number",
+          "unit": "ms"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "transaction.name.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "transaction.duration.us",
+              "id": "1",
+              "inlineScript": "_value/1000",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value/1000"
+                }
+              },
+              "type": "avg"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "timeField": "@timestamp"
+        }
+      ],
+      "title": "Transaction Response Times [APM]",
+      "transform": "table",
+      "type": "table"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "ecs_metric1",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 11
+      },
+      "id": 13,
+      "interval": null,
+      "links": [],
+      "mappingType": 2,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        },
+        {
+          "from": "200",
+          "text": "UP",
+          "to": "200"
+        },
+        {
+          "from": "1",
+          "text": "DOWN",
+          "to": "199"
+        },
+        {
+          "from": "201",
+          "text": "DOWN",
+          "to": "599"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "http_response",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "default",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "http_response_code"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "customer-service"
+            }
+          ]
+        }
+      ],
+      "thresholds": "200,200",
+      "title": "Status",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        },
+        {
+          "op": "=",
+          "text": "",
+          "value": ""
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 11
+      },
+      "id": 40,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "HealthyHostCount",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "default",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "Healthy Hosts",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "decimals": null,
+      "format": "short",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 11
+      },
+      "id": 38,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "http_response",
+          "metricName": "RequestCount",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "SampleCount"
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "https://tabcorp-test.tothenew.net/homescreen-service/actuators/info/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Current Request Count",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                4000
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "frequency": "60s",
+        "handler": 1,
+        "message": "Customer Service Request Count > 4000",
+        "name": "Request Count Alert Customer Service",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {
+        "RequestCount_SampleCount": "#1f78c1"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "decimals": 0,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 11
+      },
+      "id": 15,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "RequestCount",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Sum"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 4000
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Request Count",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                5
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "Customer Service Target Response Time alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {
+        "TargetResponseTime_SampleCount": "#6d1f62"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 11
+      },
+      "id": 16,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Target Response Time",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "TargetResponseTime",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "300",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Target Response Time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "test_aws",
+      "decimals": null,
+      "format": "s",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 14
+      },
+      "id": 42,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "TargetResponseTime",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "default",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "LB To EC2 Response Time",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 14
+      },
+      "id": 44,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "http_response",
+          "metricName": "UnHealthyHostCount",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "https://tabcorp-test.tothenew.net/homescreen-service/actuators/info/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Unhealthy Host Count",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 14
+      },
+      "id": 46,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "TargetConnectionErrorCount",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "default",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "SampleCount"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "Target Connection Error Count",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "composites": [],
+      "content": "graph LR\nA[fa:fa-user-circle https://tabcorp-test.tothenew.net/customer-service] .->C{KONG-API-Gateway}\nC -.customer-service.->  E(fa:fa-server customer-service Docker Container)\nE-.MySQL Aurora.->I(fa:fa-database MySQL Aurora DB)\nE-.RabbitMQ.->J(fa:fa-server RabbitMQ Cluster)\nE-.MongoDB.-> K(fa:fa-database MongoDB Cluster)",
+      "datasource": "-- Mixed --",
+      "decimals": 2,
+      "format": "s",
+      "graphId": "diagram_32",
+      "gridPos": {
+        "h": 8,
+        "w": 17,
+        "x": 0,
+        "y": 17
+      },
+      "id": 32,
+      "init": {
+        "arrowMarkerAbsolute": true,
+        "cloneCssStyles": false,
+        "flowchart": {
+          "htmlLabels": true,
+          "useMaxWidth": true
+        },
+        "gantt": {
+          "barGap": 4,
+          "barHeight": 20,
+          "fontFamily": "\"Open-Sans\", \"sans-serif\"",
+          "fontSize": 11,
+          "gridLineStartPadding": 35,
+          "leftPadding": 75,
+          "numberSectionStyles": 3,
+          "titleTopMargin": 25,
+          "topPadding": 50
+        },
+        "logLevel": 3,
+        "sequenceDiagram": {
+          "actorMargin": 50,
+          "bottomMarginAdj": 1,
+          "boxMargin": 10,
+          "boxTextMargin": 5,
+          "diagramMarginX": 50,
+          "diagramMarginY": 10,
+          "height": 65,
+          "messageMargin": 35,
+          "mirrorActors": true,
+          "noteMargin": 10,
+          "useMaxWidth": true,
+          "width": 150
+        },
+        "startOnLoad": false
+      },
+      "legend": {
+        "avg": true,
+        "current": true,
+        "gradient": {
+          "enabled": true,
+          "show": true
+        },
+        "max": true,
+        "min": true,
+        "show": false,
+        "total": true
+      },
+      "links": [],
+      "mappingType": 1,
+      "maxDataPoints": 100,
+      "maxWidth": false,
+      "mermaidServiceUrl": "",
+      "metricCharacterReplacements": [],
+      "mode": "content",
+      "nullPointMode": "connected",
+      "seriesOverrides": [],
+      "targets": [
+        {
+          "alias": "A",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "customer-service"
+            }
+          ]
+        },
+        {
+          "alias": "E",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "http_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "appname",
+              "operator": "=",
+              "value": "customer-service"
+            }
+          ]
+        },
+        {
+          "alias": "J",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "rabbit1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "I",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "mysql-db-cluster.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "K",
+          "datasource": "ecs_metric1",
+          "groupBy": [],
+          "measurement": "net_response",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "response_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "mongodb1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "C",
+          "datasource": "$aws_datasource",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-alb/69898112f279ff12",
+            "TargetGroup": "targetgroup/kong-test/93168ff9e325ff81"
+          },
+          "highResolution": false,
+          "metricName": "TargetResponseTime",
+          "namespace": "AWS/ApplicationELB",
+          "period": "",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": "0,1",
+      "title": "API Flow",
+      "transparent": false,
+      "type": "jdbranham-diagram-panel",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "valueOptions": [
+        "avg",
+        "min",
+        "max",
+        "total",
+        "current"
+      ]
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                100000
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "Customer Service Status Code alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {
+        "HTTPCode_Target_2XX_Count_SampleCount": "#629e51"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "decimals": 0,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 17
+      },
+      "id": 11,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "HTTPCode_Target_2XX_Count",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "300",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Sum"
+          ],
+          "tags": []
+        },
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "HTTPCode_Target_5XX_Count",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "300",
+          "policy": "default",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Sum"
+          ],
+          "tags": []
+        },
+        {
+          "dimensions": {
+            "LoadBalancer": "app/sky-ott-test-internal-alb/8fbb2536fee887bd",
+            "TargetGroup": "targetgroup/customer-service-test/7f195ad7d82bb798"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "HTTPCode_Target_4XX_Count",
+          "namespace": "AWS/ApplicationELB",
+          "orderByTime": "ASC",
+          "period": "300",
+          "policy": "default",
+          "refId": "C",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Sum"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 100000
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Status Code",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 7,
+      "panels": [],
+      "title": "Application Layer",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$aws_datasource",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 26
+      },
+      "id": 2,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster",
+            "ServiceName": "customer-service-test-service"
+          },
+          "highResolution": false,
+          "metricName": "MemoryUtilization",
+          "namespace": "AWS/ECS",
+          "period": "",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Avg. Mem. Utilization",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "MemoryReservation_Average": "#EAB839"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 26
+      },
+      "id": 4,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster"
+          },
+          "highResolution": false,
+          "metricName": "MemoryReservation",
+          "namespace": "AWS/ECS",
+          "period": "",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Avg. Mem. Reservation",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "CPUReservation_Average": "#EAB839"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 26
+      },
+      "id": 3,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster"
+          },
+          "highResolution": false,
+          "metricName": "CPUReservation",
+          "namespace": "AWS/ECS",
+          "period": "",
+          "refId": "A",
+          "region": "default",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Avg. Cpu Reservation",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": 100,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "CPUReservation_Average": "#EAB839"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 26
+      },
+      "id": 5,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster",
+            "ServiceName": "customer-service-test-service"
+          },
+          "highResolution": false,
+          "metricName": "CPUUtilization",
+          "namespace": "AWS/ECS",
+          "period": "",
+          "refId": "A",
+          "region": "default",
+          "statistics": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Avg.CPU Utilization",
+      "tooltip": {
+        "msResolution": true,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": 100,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 32
+      },
+      "id": 52,
+      "interval": null,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "params": "orgId=1&var-Server=ip-10-252-146-193&var-Interval=10s&var-datasource=ecs_metric1",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster",
+            "ServiceName": "customer-service-test-service"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "MemoryUtilization",
+          "namespace": "AWS/ECS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "ap-sou",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "Average Memory Utilization",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 32
+      },
+      "id": 54,
+      "interval": null,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "params": "orgId=1&var-Server=ip-10-252-146-193&var-Interval=10s&var-datasource=ecs_metric1",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dimensions": {
+            "ClusterName": "sky-ott-test-cluster",
+            "ServiceName": "customer-service-test-service"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "CPUUtilization",
+          "namespace": "AWS/ECS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "ap-sou",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "Average CPU Utilization",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 18,
+      "panels": [],
+      "title": "Backend Layer",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$aws_datasource",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 37
+      },
+      "id": 56,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "DatabaseConnections",
+          "namespace": "AWS/RDS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "MySQL Connections",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "test_aws",
+      "decimals": null,
+      "format": "ms",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 37
+      },
+      "id": 58,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora-aurora-replica"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "metricName": "AuroraReplicaLag",
+          "namespace": "AWS/RDS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "title": "MySQL Replication Lag",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "ecs_metric1",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 12,
+        "y": 37
+      },
+      "id": 60,
+      "interval": null,
+      "links": [
+        {
+          "dashUri": "db/vm-instance",
+          "dashboard": "VM Instance",
+          "params": "&var-Server=test-rabbit1&var-Interval=10s&var-datasource=ecs_metric1",
+          "title": "VM Instance",
+          "type": "dashboard"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "DBClusterIdentifier": "sky-ott-test-aurora"
+          },
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "rabbitmq_overview",
+          "metricName": "AuroraReplicaLag",
+          "namespace": "AWS/RDS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "connections"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "SampleCount"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit1"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Current Rabbit Connections",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "ecs_metric1",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 37
+      },
+      "id": 62,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "alias": "",
+          "dimensions": {
+            "DBClusterIdentifier": "sky-ott-test-aurora"
+          },
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "rabbitmq_overview",
+          "metricName": "AuroraReplicaLag",
+          "namespace": "AWS/RDS",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "SampleCount"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit1"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Current Rabbit Consumers",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 40
+      },
+      "id": 20,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/aws-mysql-aurora",
+          "dashboard": "AWS MySQL Aurora",
+          "title": "AWS MySQL Aurora",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "VolumeIdleTime_Average",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "CPU Utilization Master",
+          "application": {
+            "filter": ""
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora"
+          },
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "metricName": "CPUUtilization",
+          "mode": 0,
+          "namespace": "AWS/RDS",
+          "options": {
+            "showDisabledItems": false
+          },
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        },
+        {
+          "alias": "CPU Utilization Replica",
+          "application": {
+            "filter": ""
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora-aurora-replica"
+          },
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "metricName": "CPUUtilization",
+          "mode": 0,
+          "namespace": "AWS/RDS",
+          "options": {
+            "showDisabledItems": false
+          },
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPUUtilization-MySQL",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "test_aws",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 6,
+        "y": 40
+      },
+      "id": 27,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/aws-mysql-aurora",
+          "dashboard": "AWS MySQL Aurora",
+          "title": "AWS MySQL Aurora",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "VolumeIdleTime_Average",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Free Utilization Master",
+          "application": {
+            "filter": ""
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora"
+          },
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "metricName": "FreeableMemory",
+          "mode": 0,
+          "namespace": "AWS/RDS",
+          "options": {
+            "showDisabledItems": false
+          },
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Free Utilization Replica",
+          "application": {
+            "filter": ""
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "sky-ott-test-aurora-aurora-replica"
+          },
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "highResolution": false,
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "metricName": "FreeableMemory",
+          "mode": 0,
+          "namespace": "AWS/RDS",
+          "options": {
+            "showDisabledItems": false
+          },
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Free-Memory-MySQL",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "bytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "ecs_metric1",
+      "fill": 1,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 12,
+        "y": 40
+      },
+      "id": 22,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/rabbitmq",
+          "dashboard": "RabbitMQ",
+          "title": "RabbitMQ",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "CPU-Rabbit1",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit1"
+            }
+          ]
+        },
+        {
+          "alias": "CPU-Rabbit2",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit2"
+            }
+          ]
+        },
+        {
+          "alias": "CPU-Rabbit3",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "C",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit3"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Rabbit3",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "D",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit3"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Rabbit2",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "E",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit2"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Rabbit1",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "F",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "test-rabbit1"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU & Memory Usage-Rabbit",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "ecs_metric1",
+      "fill": 1,
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 40
+      },
+      "id": 28,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [
+        {
+          "dashUri": "db/mongodb",
+          "dashboard": "MongoDB",
+          "title": "MongoDB",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "CPU-node1",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "A",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "CPU-Node2",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "B",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb2.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "CPU-Node3",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "cpu",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "C",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "usage_idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb3.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Node1",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "D",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb1.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Node2",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "E",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb2.test.skyott.in.cld"
+            }
+          ]
+        },
+        {
+          "alias": "Mem-Node2",
+          "dimensions": {},
+          "groupBy": [],
+          "highResolution": false,
+          "measurement": "mem",
+          "metricName": "",
+          "namespace": "",
+          "orderByTime": "ASC",
+          "period": "",
+          "policy": "default",
+          "refId": "F",
+          "region": "ap-southeast-2",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used_percent"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "statistics": [
+            "Average"
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "mongodb3.test.skyott.in.cld"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU & Memory Usage-Mongo",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [
+    "app",
+    "docker",
+    "elb",
+    "alb"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "test_aws",
+          "value": "test_aws"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "aws_datasource",
+        "options": [],
+        "query": "cloudwatch",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Customer Service",
+  "uid": "hVGyx4Amz",
+  "version": 90
+}

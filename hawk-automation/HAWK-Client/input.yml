@@ -1,0 +1,21 @@
+environment: agent1
+telegraf:
+  install : true
+  influx:
+      - influx_endpoint : 192.XX.XX.XX
+      - influx_username :
+      - influx_password :
+  plugin:
+  global_tag:
+
+logstash:
+  install : true
+  data_path :
+    - val_path:
+    - data_directory:
+  continous_query :
+  password: #use ansible vault for password
+
+filebeat:
+  install : true
+

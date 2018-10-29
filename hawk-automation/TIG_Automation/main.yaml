@@ -1,0 +1,24 @@
+---
+- name: Install Telegraf
+  hosts: localhost
+  become: yes
+  roles:
+    - telegraf
+  vars_files:
+    - input.yaml
+#  vars:
+#    database: "telegraf"
+
+- name: influxdb installation                 
+  hosts: localhost
+  roles: 
+    - influxdb
+  vars_files:
+    - input.yaml
+
+- name: Install Grafana
+  hosts: localhost
+  roles: 
+    - grafana 
+  vars_files:
+    - input.yaml

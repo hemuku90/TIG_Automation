@@ -1,0 +1,24 @@
+environment: production
+telegraf:
+  install : true
+  influx:
+      - influx_endpoint : 192.XX.XX.XX
+      - influx_username :
+      - influx_password :
+  plugin:
+  global_tag:
+
+influxdb:
+  install : true
+  data_path :
+    - val_path:
+    - data_directory:
+  continous_query :
+  password: #use ansible vault for password
+
+grafana:
+  install: true
+  conf:
+    smtp_settings:
+    config:
+    
